@@ -19,13 +19,16 @@ const Recommendations = () => {
   useEffect(() => {
     const getRecommendations = async () => {
       try {
+        setIsLoading(true);
         const response = await axios.get(
           `${DEV_API}/product/get-recommendations`,
         );
 
         setRecommendations(response.data.data);
+        setIsLoading(false);
       } catch (error: any) {
-        toast.error(error);
+        toast.error(error.response.message);
+        setIsLoading(false);
       }
     };
     getRecommendations();
