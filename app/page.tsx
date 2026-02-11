@@ -5,7 +5,7 @@ import MobileHeader from './components/MobileHeader';
 import DesktopHeader from './components/DesktopHeader';
 import Sidebar from './components/Sidebar';
 import Image from 'next/image';
-import ProductCard from './components/ProductCard';
+import Link from 'next/link';
 import Recommendations from './components/Recommendations';
 
 //IMPORTING HOOKS
@@ -108,13 +108,21 @@ const Home = () => {
 
       {/* BONUSES */}
       <section className="flex flex-col gap-5 mt-150 px-5 md:px-10 lg:px-15 md:flex-row">
-        <div>
-          <Image src={image11} alt="" />
-        </div>
+        <Link href={'/all-products'}>
+          <div>
+            <Image src={image11} alt="" />
+          </div>
+        </Link>
 
         <div className="flex flex-col gap-5">
-          <Image src={image12} alt="" />
-          <Image src={image13} alt="" />
+          <Link href={'/all-products'}>
+            {' '}
+            <Image src={image12} alt="" />
+          </Link>
+          <Link href={'/all-products'}>
+            {' '}
+            <Image src={image13} alt="" />
+          </Link>
         </div>
       </section>
 
