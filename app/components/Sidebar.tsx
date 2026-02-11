@@ -50,14 +50,12 @@ const Sidebar = ({
         <ul>
           <Link href={'/all-products'}>
             {' '}
-            <Link href={'/all-products'}>
+            <li className="p-3 border-b border-gray-300 font-bold text-gray-800">
               {' '}
-              <li className="p-3 border-b border-gray-300 font-bold text-gray-800">
-                {' '}
-                SHOP ALL{' '}
-              </li>
-            </Link>
+              SHOP ALL{' '}
+            </li>
           </Link>
+
           <Link href={'/kitchen-appliances'}>
             {' '}
             <li className="p-3 border-b border-gray-300 font-bold text-gray-800">
