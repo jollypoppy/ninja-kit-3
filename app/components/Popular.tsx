@@ -19,11 +19,14 @@ const Popular = () => {
   useEffect(() => {
     const getPopular = async () => {
       try {
+        setIsLoading(true);
         const response = await axios.get(`${DEV_API}/product/get-popular`);
 
         setPopular(response.data.data);
+        setIsLoading(false);
       } catch (error: any) {
-        toast.error(error);
+        toast.error(error.response.message);
+        setIsLoading(false);
       }
     };
     getPopular();
