@@ -5,7 +5,6 @@ import DesktopHeader from '@/app/components/DesktopHeader';
 import MobileHeader from '@/app/components/MobileHeader';
 import Sidebar from '@/app/components/Sidebar';
 import Image from 'next/image';
-import Link from 'next/link';
 
 //IMPORTING PAGE ASSETS
 import bin from '@/public/bin.png';
@@ -71,12 +70,17 @@ const CartPage = () => {
     });
   };
 
-  const { user } = useAppContext();
+  const { user, token } = useAppContext();
   const sellerId = '6988e97855e9a3d54af22435';
 
   const proceedToCheckoutChat = async () => {
     try {
       if (isLoading) {
+        return;
+      }
+
+      if (!user || !token) {
+        router.push('/profile');
         return;
       }
       setIsLoading(true);
