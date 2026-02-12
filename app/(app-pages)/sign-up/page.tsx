@@ -65,8 +65,9 @@ const SignUpPage = () => {
 
       localStorage.setItem('ninja-token', response.data.data.token);
       localStorage.setItem('ninja-user', response.data.data.userId);
-      setIsLoading(false);
       window.location.reload();
+      setIsLoading(false);
+      window.location.replace('/');
       router.push('/');
     } catch (error: any) {
       console.log(error);
