@@ -97,6 +97,7 @@ const page = ({ params }: { params: Promise<{ productId: string }> }) => {
       if (!token || !user) {
         toast.error('Please login to continue');
         router.push('/profile');
+        return;
       }
       if (isLoading || !productId) {
         return;
