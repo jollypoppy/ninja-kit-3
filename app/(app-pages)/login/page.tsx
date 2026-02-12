@@ -54,9 +54,9 @@ const LoginPage = () => {
 
       localStorage.setItem('ninja-token', response.data.data.token);
       localStorage.setItem('ninja-user', response.data.data.userId);
+      window.location.reload();
       setIsLoading(false);
-      router.refresh();
-      router.push('/');
+      window.location.replace('/');
     } catch (error: any) {
       console.log(error.response);
       toast.error(error.response.data.message);
